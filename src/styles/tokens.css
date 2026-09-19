@@ -1,0 +1,130 @@
+/* ==========================================================================
+   ASODS Design System Tokens (Abit Apple Frosted Glass + PortGuard Console)
+   ========================================================================== */
+
+:root {
+  /* --- Light Theme (Default / System Apple Light) --- */
+  --color-background: #F5F5F7;
+  --color-background-subtle: #ECECEE;
+
+  --color-surface: #FFFFFF;
+  --color-surface-elevated: #F9F9FA;
+  --color-surface-floating: rgba(255, 255, 255, 0.85);
+  --color-surface-subtle: #F0F0F2;
+
+  /* Glass Levels (Light) */
+  --color-glass-1: rgba(255, 255, 255, 0.45); /* Subtle: Toolbars, minor floating */
+  --color-glass-2: rgba(255, 255, 255, 0.65); /* Standard: Navigation, Dock, Action bar */
+  --color-glass-3: rgba(255, 255, 255, 0.80); /* Elevated: Modal, Popover, Sheet */
+  --color-glass-border: rgba(255, 255, 255, 0.45);
+  --color-glass-border-subtle: rgba(0, 0, 0, 0.06);
+
+  /* Typography Colors (Light) */
+  --color-text-primary: #1D1D1F;
+  --color-text-secondary: #6E6E73;
+  --color-text-tertiary: #8E8E93;
+
+  /* Accent (Apple Blue) */
+  --color-accent: #007AFF;
+  --color-accent-hover: #0066D6;
+  --color-accent-active: #0051AD;
+  --color-accent-subtle: rgba(0, 122, 255, 0.08);
+
+  /* Semantic Colors */
+  --color-success: #34C759;
+  --color-success-subtle: rgba(52, 199, 89, 0.12);
+  --color-warning: #FF9F0A;
+  --color-warning-subtle: rgba(255, 159, 10, 0.12);
+  --color-danger: #FF3B30;
+  --color-danger-subtle: rgba(255, 59, 48, 0.12);
+  --color-info: #007AFF;
+  --color-info-subtle: rgba(0, 122, 255, 0.12);
+
+  /* Borders & Dividers */
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-border-subtle: rgba(0, 0, 0, 0.04);
+  --color-border-strong: rgba(0, 0, 0, 0.14);
+
+  /* Overlays */
+  --color-overlay: rgba(0, 0, 0, 0.25);
+
+  /* Radius Tokens */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+  --radius-2xl: 22px;
+  --radius-dock: 24px;
+  --radius-full: 9999px;
+
+  /* Shadows (Soft Apple System Shadows) */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.12);
+  --shadow-modal: 0 24px 60px rgba(0, 0, 0, 0.16);
+
+  /* Backdrop Blurs */
+  --blur-1: 12px;
+  --blur-2: 20px;
+  --blur-3: 28px;
+
+  /* Motion Timing */
+  --duration-fast: 150ms;
+  --duration-normal: 200ms;
+  --duration-slow: 300ms;
+  --ease-apple: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- Dark Theme (Multi-level Deep Gray Surface Hierarchy) --- */
+.dark {
+  --color-background: #0B0B0D;
+  --color-background-subtle: #121215;
+
+  --color-surface: #151517;
+  --color-surface-elevated: #1C1C1E;
+  --color-surface-floating: rgba(28, 28, 30, 0.88);
+  --color-surface-subtle: #242426;
+
+  /* Glass Levels (Dark) */
+  --color-glass-1: rgba(30, 30, 32, 0.55);
+  --color-glass-2: rgba(25, 25, 28, 0.70);
+  --color-glass-3: rgba(22, 22, 25, 0.85);
+  --color-glass-border: rgba(255, 255, 255, 0.10);
+  --color-glass-border-subtle: rgba(255, 255, 255, 0.05);
+
+  /* Typography Colors (Dark) */
+  --color-text-primary: rgba(255, 255, 255, 0.92);
+  --color-text-secondary: rgba(255, 255, 255, 0.60);
+  --color-text-tertiary: rgba(255, 255, 255, 0.38);
+
+  /* Accent (Apple Blue in Dark Mode) */
+  --color-accent: #0A84FF;
+  --color-accent-hover: #2997FF;
+  --color-accent-active: #0066D6;
+  --color-accent-subtle: rgba(10, 132, 255, 0.15);
+
+  /* Semantic Colors (Dark) */
+  --color-success: #30D158;
+  --color-success-subtle: rgba(48, 209, 88, 0.15);
+  --color-warning: #FF9F0A;
+  --color-warning-subtle: rgba(255, 159, 10, 0.15);
+  --color-danger: #FF453A;
+  --color-danger-subtle: rgba(255, 69, 58, 0.15);
+  --color-info: #0A84FF;
+  --color-info-subtle: rgba(10, 132, 255, 0.15);
+
+  /* Borders & Dividers */
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-border-subtle: rgba(255, 255, 255, 0.04);
+  --color-border-strong: rgba(255, 255, 255, 0.15);
+
+  /* Overlays */
+  --color-overlay: rgba(0, 0, 0, 0.65);
+
+  /* Shadows (Ambient Depth) */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.55);
+  --shadow-modal: 0 24px 60px rgba(0, 0, 0, 0.70);
+}

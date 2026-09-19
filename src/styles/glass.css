@@ -1,0 +1,63 @@
+/* ==========================================================================
+   Apple Frosted Glass Materials & Utility Classes
+   ========================================================================== */
+
+/* Glass Level 1 — Subtle (Toolbars, sub-controls, secondary badges) */
+.glass-subtle {
+  background: var(--color-glass-1);
+  backdrop-filter: blur(var(--blur-1)) saturate(150%);
+  -webkit-backdrop-filter: blur(var(--blur-1)) saturate(150%);
+  border: 1px solid var(--color-glass-border-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Glass Level 2 — Standard (Header, Floating Dock, Segmented Controls) */
+.glass-standard {
+  background: var(--color-glass-2);
+  backdrop-filter: blur(var(--blur-2)) saturate(160%);
+  -webkit-backdrop-filter: blur(var(--blur-2)) saturate(160%);
+  border: 1px solid var(--color-glass-border);
+  box-shadow: var(--shadow-md);
+}
+
+/* Glass Level 3 — Elevated (Modal Sheets, Popover Menus, Detail Drawers) */
+.glass-elevated {
+  background: var(--color-glass-3);
+  backdrop-filter: blur(var(--blur-3)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--blur-3)) saturate(180%);
+  border: 1px solid var(--color-glass-border);
+  box-shadow: var(--shadow-modal);
+}
+
+/* Specialized Apple Dock Material */
+.glass-dock {
+  background: var(--color-glass-2);
+  backdrop-filter: blur(24px) saturate(170%);
+  -webkit-backdrop-filter: blur(24px) saturate(170%);
+  border: 1px solid var(--color-glass-border);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25), 0 0 0 1px var(--color-glass-border-subtle);
+  border-radius: var(--radius-dock);
+}
+
+/* System Native Button Hover/Active Transitions */
+.btn-interaction {
+  transition: all var(--duration-fast) var(--ease-apple);
+}
+
+.btn-interaction:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+/* Low-contrast Surface Card */
+.surface-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--duration-normal) var(--ease-apple), box-shadow var(--duration-normal) var(--ease-apple);
+}
+
+.surface-card-hover:hover {
+  border-color: var(--color-border-strong);
+  box-shadow: var(--shadow-md);
+}

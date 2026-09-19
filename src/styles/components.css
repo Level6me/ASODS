@@ -1,0 +1,143 @@
+/* ==========================================================================
+   Component Specific Atoms & Micro-Interactions
+   ========================================================================== */
+
+/* iOS Style Toggle Switch */
+.ios-toggle {
+  position: relative;
+  display: inline-flex;
+  width: 44px;
+  height: 26px;
+  border-radius: 999px;
+  background-color: var(--color-surface-subtle);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-apple), border-color var(--duration-fast) var(--ease-apple);
+}
+
+.ios-toggle.active {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.ios-toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background-color: #FFFFFF;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform var(--duration-fast) var(--ease-apple);
+}
+
+.ios-toggle.active .ios-toggle-thumb {
+  transform: translateX(18px);
+}
+
+/* Apple Segmented Control Container & Active Pill */
+.segmented-control {
+  display: inline-flex;
+  padding: 3px;
+  background: var(--color-surface-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  gap: 2px;
+}
+
+.segmented-control-item {
+  position: relative;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  border-radius: var(--radius-sm);
+  transition: all var(--duration-fast) var(--ease-apple);
+  cursor: pointer;
+  user-select: none;
+}
+
+.segmented-control-item:hover {
+  color: var(--color-text-primary);
+}
+
+.segmented-control-item.active {
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Table Density Styling */
+.table-dense th {
+  padding: 10px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-tertiary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.table-dense td {
+  padding: 12px 14px;
+  font-size: 13px;
+  border-bottom: 1px solid var(--color-border-subtle);
+  vertical-align: middle;
+}
+
+.table-dense tr:last-child td {
+  border-bottom: none;
+}
+
+.table-dense tbody tr {
+  transition: background-color var(--duration-fast) ease;
+}
+
+.table-dense tbody tr:hover {
+  background-color: var(--color-accent-subtle);
+}
+
+/* Animations */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes toastSlideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 16px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes drawerSlideRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-modal-in {
+  animation: modalFadeIn var(--duration-normal) var(--ease-apple) forwards;
+}
+
+.animate-toast-in {
+  animation: toastSlideUp var(--duration-normal) var(--ease-apple) forwards;
+}
+
+.animate-drawer-in {
+  animation: drawerSlideRight var(--duration-normal) var(--ease-apple) forwards;
+}
