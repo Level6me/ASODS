@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Component Specific Atoms & Micro-Interactions
+   Component Specific Atoms, Spring Dynamics & Micro-Interactions
    ========================================================================== */
 
 /* iOS Style Toggle Switch */
@@ -68,6 +68,30 @@
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
+/* macOS Window Traffic Lights */
+.traffic-light {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  display: inline-block;
+  transition: opacity 0.15s ease;
+}
+
+.traffic-light-close {
+  background-color: #FF5F56;
+  border: 0.5px solid #E0443E;
+}
+
+.traffic-light-minimize {
+  background-color: #FFBD2E;
+  border: 0.5px solid #DEA123;
+}
+
+.traffic-light-zoom {
+  background-color: #27C93F;
+  border: 0.5px solid #1AAB29;
+}
+
 /* Table Density Styling */
 .table-dense th {
   padding: 10px 14px;
@@ -98,46 +122,72 @@
   background-color: var(--color-accent-subtle);
 }
 
-/* Animations */
-@keyframes modalFadeIn {
-  from {
+/* Apple Spring Physics Transition Animations */
+@keyframes springModalIn {
+  0% {
     opacity: 0;
-    transform: scale(0.96) translateY(8px);
+    transform: scale(0.92) translateY(16px);
   }
-  to {
+  60% {
+    opacity: 1;
+    transform: scale(1.015) translateY(-2px);
+  }
+  100% {
     opacity: 1;
     transform: scale(1) translateY(0);
   }
 }
 
-@keyframes toastSlideUp {
-  from {
+@keyframes springToastSlideUp {
+  0% {
     opacity: 0;
-    transform: translate(-50%, 16px);
+    transform: translate(-50%, 24px) scale(0.95);
   }
-  to {
+  65% {
     opacity: 1;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, -3px) scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
   }
 }
 
-@keyframes drawerSlideRight {
-  from {
+@keyframes springDrawerRight {
+  0% {
     transform: translateX(100%);
   }
-  to {
+  70% {
+    transform: translateX(-4px);
+  }
+  100% {
     transform: translateX(0);
   }
 }
 
-.animate-modal-in {
-  animation: modalFadeIn var(--duration-normal) var(--ease-apple) forwards;
+@keyframes dynamicIslandExpand {
+  0% {
+    transform: scaleX(0.8) scaleY(0.7);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scaleX(1) scaleY(1);
+    opacity: 1;
+  }
 }
 
-.animate-toast-in {
-  animation: toastSlideUp var(--duration-normal) var(--ease-apple) forwards;
+.animate-spring-modal {
+  animation: springModalIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.animate-drawer-in {
-  animation: drawerSlideRight var(--duration-normal) var(--ease-apple) forwards;
+.animate-spring-toast {
+  animation: springToastSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-spring-drawer {
+  animation: springDrawerRight 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-dynamic-island {
+  animation: dynamicIslandExpand 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }

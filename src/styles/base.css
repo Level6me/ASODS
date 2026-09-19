@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Base CSS & System Typography Reset
+   Base CSS & System Typography Reset & Advanced HIG Accessibility
    ========================================================================== */
 
 *, *::before, *::after {
@@ -104,5 +104,35 @@ html, body {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Accessibility: Reduced Transparency Support (Fallback to solid surfaces) */
+@media (prefers-reduced-transparency: reduce) {
+  .glass-subtle,
+  .glass-standard,
+  .glass-elevated,
+  .glass-dock {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    background-color: var(--color-surface) !important;
+    border-color: var(--color-border-strong) !important;
+  }
+}
+
+/* Accessibility: High Contrast Mode */
+@media (prefers-contrast: more) {
+  :root {
+    --color-border: rgba(0, 0, 0, 0.25);
+    --color-border-subtle: rgba(0, 0, 0, 0.15);
+    --color-glass-border: rgba(0, 0, 0, 0.35);
+  }
+  .dark {
+    --color-border: rgba(255, 255, 255, 0.30);
+    --color-border-subtle: rgba(255, 255, 255, 0.20);
+    --color-glass-border: rgba(255, 255, 255, 0.40);
+  }
+  button, input, select, textarea {
+    border-width: 1.5px !important;
   }
 }

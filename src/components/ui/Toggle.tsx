@@ -1,5 +1,6 @@
 import React from 'react';
 import { cn } from '../../utils/cn';
+import { haptics } from '../../utils/haptics';
 
 export interface ToggleProps {
   checked: boolean;
@@ -18,6 +19,13 @@ export const Toggle: React.FC<ToggleProps> = ({
   id,
   'aria-label': ariaLabel,
 }) => {
+  const handleClick = () => {
+    if (!disabled) {
+      haptics.light();
+      onChange(!checked);
+    }
+  };
+
   return (
     <button
       id={id}
@@ -26,7 +34,7 @@ export const Toggle: React.FC<ToggleProps> = ({
       aria-checked={checked}
       aria-label={ariaLabel}
       disabled={disabled}
-      onClick={() => !disabled && onChange(!checked)}
+      onClick={handleClick}
       className={cn(
         'relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent',
         'transition-colors duration-fast ease-apple focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2',

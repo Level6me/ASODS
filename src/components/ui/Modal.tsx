@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { X } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { haptics } from '../../utils/haptics';
 
 export interface ModalProps {
   isOpen: boolean;
@@ -28,6 +29,7 @@ export const Modal: React.FC<ModalProps> = ({
       }
     };
     if (isOpen) {
+      haptics.heavy();
       document.body.style.overflow = 'hidden';
       window.addEventListener('keydown', handleKeyDown);
     }
@@ -54,11 +56,11 @@ export const Modal: React.FC<ModalProps> = ({
         onClick={onClose}
       />
 
-      {/* Floating Glass Surface (Glass 3 Elevated) */}
+      {/* Floating Glass Surface with Spring Entrance */}
       <div
         className={cn(
           'relative w-full z-10 glass-elevated border border-glass-border',
-          'rounded-2xl shadow-glass-modal p-6 text-text-primary animate-modal-in',
+          'rounded-2xl shadow-glass-modal p-6 text-text-primary animate-spring-modal',
           maxWidthMap[maxWidth],
           className
         )}
